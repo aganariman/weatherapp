@@ -1,14 +1,11 @@
 import requests
 import datetime
 import sys
-
-url = 'https://api.openweathermap.org/data/2.5/forecast'
-appid = 'INSERT_YOUR_API_KEY_HERE'
-units = 'metric'
+import config
 
 def __RequestWeatherForecast(params):
     try:
-        resp = requests.get(url=url, params=params)
+        resp = requests.get(url=config.url, params=params)
         data = resp.json()
         return data
     except requests.exceptions.RequestException as e:
@@ -19,16 +16,16 @@ def __getWeatherForecast(lat, lon):
     params = dict(
         lat=lat,
         lon=lon,
-        units=units,
-        appid=appid
+        units=config.units,
+        appid=config.appid
     )
     return __RequestWeatherForecast(params)
 
 def __getWeatherForecastByZip(zipcode):
     params = dict(
         zip=zipcode,
-        units=units,
-        appid=appid
+        units=config.units,
+        appid=config.appid
     )
     return __RequestWeatherForecast(params)
 
