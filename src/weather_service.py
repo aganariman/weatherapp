@@ -19,11 +19,20 @@ def getWeatherForecast(lat, lon):
 
     return data
 
-def getFiveDayForecastSummary(lat, lon):
+def getWeatherForecastByZip(zipcode):
+    params = dict(
+        zip=zipcode,
+        units=units,
+        appid=appid
+    )
+
+    resp = requests.get(url=url, params=params)
+    data = resp.json()
+
+    return data
+
+def __buildForecastSummary(fullforecast):
     summary = {}
-
-    fullforecast = getWeatherForecast(lat, lon)
-
     for item in fullforecast['list']:
         dt = datetime.datetime.utcfromtimestamp(item['dt'])
         shortdate = datetime.datetime(dt.year, dt. month, dt.day)
@@ -56,3 +65,10 @@ def getFiveDayForecastSummary(lat, lon):
             summary[day]["precipitation"]["snow"] += item["snow"]["3h"]
 
     return summary
+
+
+def getFiveDayForecastSummary(lat, lon):
+    return __buildForecastSummary(getWeatherForecast(lat, lon))
+
+def getFiveDayForecastSummaryByZip(zipcode):
+    return __buildForecastSummary(getWeatherForecastByZip(zipcode))
