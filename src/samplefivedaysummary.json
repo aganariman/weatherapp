@@ -1,0 +1,56 @@
+{
+    "1692136800.0": {
+        "dt_txt": "2023-08-16",
+        "temp_min": 22.26,
+        "temp_max": 29.77,
+        "precipitation": {
+            "rain": 0.56,
+            "snow": 0.0
+        }
+    },
+    "1692223200.0": {
+        "dt_txt": "2023-08-17",
+        "temp_min": 17.56,
+        "temp_max": 29.28,
+        "precipitation": {
+            "rain": 10.469999999999999,
+            "snow": 0.0
+        }
+    },
+    "1692309600.0": {
+        "dt_txt": "2023-08-18",
+        "temp_min": 16.77,
+        "temp_max": 29.38,
+        "precipitation": {
+            "rain": 0.25,
+            "snow": 0.0
+        }
+    },
+    "1692396000.0": {
+        "dt_txt": "2023-08-19",
+        "temp_min": 18.53,
+        "temp_max": 30.67,
+        "precipitation": {
+            "rain": 0.0,
+            "snow": 0.0
+        }
+    },
+    "1692482400.0": {
+        "dt_txt": "2023-08-20",
+        "temp_min": 19.79,
+        "temp_max": 32.19,
+        "precipitation": {
+            "rain": 0.0,
+            "snow": 0.0
+        }
+    },
+    "1692568800.0": {
+        "dt_txt": "2023-08-21",
+        "temp_min": 21.04,
+        "temp_max": 32.76,
+        "precipitation": {
+            "rain": 0.0,
+            "snow": 0.0
+        }
+    }
+}
