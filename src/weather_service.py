@@ -9,7 +9,7 @@ def __RequestWeatherForecast(params):
         data = resp.json()
         return data
     except requests.exceptions.RequestException as e:
-        print(e.strerror) #print to log file
+        #TODO: write e.strerror to a log file
         raise Exception(e)
 
 def __getWeatherForecast(lat, lon):

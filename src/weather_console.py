@@ -27,17 +27,21 @@ def __printData(data):
         print(data[item]["dt_txt"].ljust(12), temp.ljust(14), ('%0.0f mm' % data[item]["precipitation"]["rain"]).ljust(20), ('%0.0f' % data[item]["precipitation"]["snow"]).ljust(14))
 
 if __name__ == "__main__":
+    data = {};
+    
     while True:
         try:
             data = weather_service.getFiveDayForecastSummaryByZip(__GetZipCode())
         except Exception as e:
+            #TODO: write exception to a log file instead of exposing details to the user
             print('Error during retrieving forecast: ', e)
 
-        if data["isSuccess"]:
-            __printData(data["results"])
-            break
-        else:
-            print('Error from the forecast service: ', data["message"])
+        if "isSuccess" in data:
+            if data["isSuccess"]:
+                __printData(data["results"])
+                #break
+            else:
+                print('Error from the forecast service: ', data["message"])
 
         input("Press any key to enter a new zip code and try again...")
 
